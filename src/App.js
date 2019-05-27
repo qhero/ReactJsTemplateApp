@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { Provider } from "react-redux";
+import { ConnectedRouter } from "connected-react-router";
+import createStore, { history } from "./store/configureStore";
+
+import routes from './routes';
+
+// const store = configureStore(history, {});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={createStore()}>
+      <ConnectedRouter history={history}>
+      <div className="App">
+        <h1>Hello World!</h1>
+        <BrowserRouter>
+          {routes.map(route => (
+            <Route key={route.path} {...route} />
+          ))}
+        </BrowserRouter>
+      </div>
+      </ConnectedRouter>
+    </Provider>
+
   );
 }
 
