@@ -1,6 +1,0 @@
-export const FETCH_ACTIVITY = 'activities/FETCH_ACTIVITY';
-export const FETCH_ACTIVITY_SUCCESS = 'activities/FETCH_ACTIVITY_SUCCESS';
-export const FETCH_ACTIVITY_FAILED = 'activities/FETCH_ACTIVITY_FAILED';
-export const CREATE_ACTIVITY= 'activities/CREATE_ACTIVITY';
-export const CREATE_ACTIVITY_SUCCESS = 'activities/CREATE_ACTIVITY_SUCCESS';
-export const CREATE_ACTIVITY_FAILED = 'activities/CREATE_ACTIVITY_FAILED';
